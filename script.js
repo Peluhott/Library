@@ -15,8 +15,15 @@ function displayBooks() {
         let bookCategory = document.createElement('p');
         bookCategory.innerText = category;
         
-        let bookRead = document.createElement('p');
-
+        let bookRead = document.createElement('button');
+        if(read == false){
+            bookRead.innerText = "No";
+        }
+        else {
+            bookRead.innerText = "Yes"
+        }
+        let deleteButton = document.createElement('button');
+        deleteButton.innerText = 'Delete'
     }
 }
 
