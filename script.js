@@ -1,3 +1,26 @@
+
+const libraryContainer = document.querySelector(".library");
+
+function displayBooks() {
+    for (let i = 0; i < myLibrary.length; i++){
+        const individualBook = document.createElement('div');
+        individualBook.classList.add('bookcontainer');
+        
+        let bookTitle = document.createElement('p');
+        bookTitle.innerText = title;
+        
+        let bookAuthor = document.createElement('p');
+        bookAuthor.innerText = author;
+        
+        let bookCategory = document.createElement('p');
+        bookCategory.innerText = category;
+        
+        let bookRead = document.createElement('p');
+
+    }
+}
+
+
 const myLibrary = [];
 
 function Book(title,author,category,read){
