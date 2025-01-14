@@ -77,7 +77,7 @@ openButton.addEventListener('click', () => {
 });
 
 closeButton.addEventListener('click', () => {
-    dialog.closest();
+    dialog.close();
 });
 
 userForm.addEventListener('submit', (event) => {
