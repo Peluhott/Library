@@ -1,10 +1,10 @@
 
-const libraryContainer = document.querySelector(".library");
+
 
 function displayBooks() {
     const libraryContainer = document.querySelector(".library");
     libraryContainer.innerHTML = '';
-    libraryContainer.forEach((book, index) =>{
+    myLibrary.forEach((book, index) =>{
         const individualBook = document.createElement('div');
         individualBook.classList.add('bookcontainer');
         
@@ -12,28 +12,29 @@ function displayBooks() {
         bookTitle.innerText = `Title: ${book.title}`;
         
         let bookAuthor = document.createElement('p');
-        bookAuthor.innerText = book.author;
+        bookAuthor.innerText = `Author: ${book.author}`;
         
         let bookCategory = document.createElement('p');
-        bookCategory.innerText = book.category;
+        bookCategory.innerText = `Category: ${book.category}`;
         
         let bookRead = document.createElement('button');
         if(book.read == false){
-            bookRead.innerText = "No";
+            bookRead.innerText = "Not Read";
         }
         else {
-            bookRead.innerText = "Yes"
+            bookRead.innerText = "Read"
         }
 
         bookRead.addEventListener('click', () => {
             book.read = !book.read;
+            displayBooks();
         });
 
         let deleteButton = document.createElement('button');
         deleteButton.innerText = 'Delete'
 
         deleteButton.addEventListener ('click', () => {
-            myLibrary.splice(i,1);
+            myLibrary.splice(index,1);
             displayBooks();
         });
 
