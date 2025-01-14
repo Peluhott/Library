@@ -22,6 +22,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, 200px);
     grid-template-rows: repeat(auto-fill, 200px);
+    gap: 15px;
 }
 
 .bookcontainer {
