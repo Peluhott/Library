@@ -2,21 +2,23 @@
 const libraryContainer = document.querySelector(".library");
 
 function displayBooks() {
-    for (let i = 0; i < myLibrary.length; i++){
+    const libraryContainer = document.querySelector(".library");
+    libraryContainer.innerHTML = '';
+    libraryContainer.forEach((book, index) =>{
         const individualBook = document.createElement('div');
         individualBook.classList.add('bookcontainer');
         
         let bookTitle = document.createElement('p');
-        bookTitle.innerText = myLibrary[i].title;
+        bookTitle.innerText = `Title: ${book.title}`;
         
         let bookAuthor = document.createElement('p');
-        bookAuthor.innerText = myLibrary[i].author;
+        bookAuthor.innerText = book.author;
         
         let bookCategory = document.createElement('p');
-        bookCategory.innerText = myLibrary[i].category;
+        bookCategory.innerText = book.category;
         
         let bookRead = document.createElement('button');
-        if(myLibrary[i].read == false){
+        if(book.read == false){
             bookRead.innerText = "No";
         }
         else {
@@ -24,7 +26,7 @@ function displayBooks() {
         }
 
         bookRead.addEventListener('click', () => {
-            myLibrary[i].read = !myLibrary[i].read;
+            book.read = !book.read;
         });
 
         let deleteButton = document.createElement('button');
@@ -40,7 +42,8 @@ function displayBooks() {
         individualBook.appendChild(bookCategory);
         individualBook.appendChild(bookRead);
         individualBook.appendChild(deleteButton);
-    }
+        libraryContainer.appendChild(individualBook);
+    });
 }
 
 
@@ -63,6 +66,8 @@ Book.prototype.printDetails = function() {
 
 }
 
+addBookToLibrary('No Bad Parts','Richard Scwhartz','Psychology',false);
+displayBooks();
 
 
 

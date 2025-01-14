@@ -8,3 +8,17 @@ body {
     display: grid;
     grid-template-rows: 200px 1fr;
 }
+
+.header {
+    height: 400px;
+}
+
+.library {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    grid-template-rows: repeat(auto-fill, 300px);
+}
+
+.book-container {
+    background-color: grey;
+}
