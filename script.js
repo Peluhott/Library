@@ -87,6 +87,18 @@ userForm.addEventListener('submit', (event) => {
     const category = document.getElementById('category').value;
     const read = document.getElementById('read').value;
    
+    if (read == 'yes'){
+        let readOrNot = true;
+        addBookToLibrary(title, author, category, readOrNot);
+        displayBooks();
+    }
+    else if(read == 'no'){
+        let readOrNot = false;
+        addBookToLibrary(title, author, category, readOrNot);
+        displayBooks();
+    }
+    userForm.reset();
+    dialog.close();
 })
 
 addBookToLibrary('No Bad Parts','Richard Scwhartz','Psychology',false);
