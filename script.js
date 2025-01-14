@@ -67,6 +67,28 @@ Book.prototype.printDetails = function() {
 
 }
 
+const dialog = document.getElementById('myDialog');
+const openButton = document.querySelector('.book-form');
+const closeButton = document.getElementById('closeBtn');
+const userForm = document.getElementById('userForm');
+
+openButton.addEventListener('click', () => {
+    dialog.showModal();
+});
+
+closeButton.addEventListener('click', () => {
+    dialog.closest();
+});
+
+userForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const title = document.getElementById('title').value;
+    const author = document.getElementById('author').value;
+    const category = document.getElementById('category').value;
+    const read = document.getElementById('read').value;
+   
+})
+
 addBookToLibrary('No Bad Parts','Richard Scwhartz','Psychology',false);
 displayBooks();
 

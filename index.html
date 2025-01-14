@@ -8,8 +8,8 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="modal-overlay"  id="modal">
-        <dialog>
+    
+        <dialog id="myDialog">
             <button id="closeBtn" class="close-btn">&times;</button>
             <h2>Enter Book Details</h2>
             <form id="userForm">
@@ -22,8 +22,8 @@
                 
                 <label for="category">Category</label>
                 <input type="text" id="category" class="form-input" placeholder="Category" required><br>
-                <label for="Read">Read: </label>
-                <input type="text" id="Read" class="form-input" placeholder="Have you read?" required><br>
+                <label for="read">Read: </label>
+                <input type="text" id="read" class="form-input" placeholder="Have you read?" required><br>
                 
                 <button type="submit">Submit</button>
 
@@ -32,7 +32,7 @@
             </form>
             
         </dialog>
-    </div>
+    
     <div class="book-options">
         <button class="book-form">Add Book</button>
     </div>
