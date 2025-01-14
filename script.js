@@ -7,16 +7,16 @@ function displayBooks() {
         individualBook.classList.add('bookcontainer');
         
         let bookTitle = document.createElement('p');
-        bookTitle.innerText = title;
+        bookTitle.innerText = myLibrary[i].title;
         
         let bookAuthor = document.createElement('p');
-        bookAuthor.innerText = author;
+        bookAuthor.innerText = myLibrary[i].author;
         
         let bookCategory = document.createElement('p');
-        bookCategory.innerText = category;
+        bookCategory.innerText = myLibrary[i].category;
         
         let bookRead = document.createElement('button');
-        if(read == false){
+        if(myLibrary[i].read == false){
             bookRead.innerText = "No";
         }
         else {
@@ -24,15 +24,15 @@ function displayBooks() {
         }
 
         bookRead.addEventListener('click', () => {
-            read = !read;
+            myLibrary[i].read = !myLibrary[i].read;
         });
-        
+
         let deleteButton = document.createElement('button');
         deleteButton.innerText = 'Delete'
 
         deleteButton.addEventListener ('click', () => {
             myLibrary.splice(i,1);
-            displayBooks
+            displayBooks();
         });
 
         individualBook.appendChild(bookTitle);
