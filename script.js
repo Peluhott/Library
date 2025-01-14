@@ -22,8 +22,24 @@ function displayBooks() {
         else {
             bookRead.innerText = "Yes"
         }
+
+        bookRead.addEventListener('click', () => {
+            read = !read;
+        });
+        
         let deleteButton = document.createElement('button');
         deleteButton.innerText = 'Delete'
+
+        deleteButton.addEventListener ('click', () => {
+            myLibrary.splice(i,1);
+            displayBooks
+        });
+
+        individualBook.appendChild(bookTitle);
+        individualBook.appendChild(bookAuthor);
+        individualBook.appendChild(bookCategory);
+        individualBook.appendChild(bookRead);
+        individualBook.appendChild(deleteButton);
     }
 }
 
@@ -49,16 +65,5 @@ Book.prototype.printDetails = function() {
 
 
 
-function deleteBook(title){
-    for( let i = 0; i < myLibrary.length; i++){
-        const book = myLibrary[i]
-        if (book.title === title){
-            myLibrary.splice(i,1);
-            break;
-        }
-    }
-}
 
-function toggleRead(index){
-    myLibrary[index].read = !myLibrary[index].read;
-}
+
